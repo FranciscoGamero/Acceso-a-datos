@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 // @RestController = @Controller + @ResponseBody en cada método
@@ -43,6 +44,19 @@ public class PlaceController {
     }
     @PutMapping("/{id}")
     public ResponseEntity<Place> modificarLugar(@PathVariable Long id, @RequestBody Place lugar){
-
+        Optional<Place> lugarExistente = servicioPlace.buscarPorId(id);
+        if (lugarExistente.isPresent()){
+            Place lugarActualizado = servicioPlace.modificarLugar(lugar);
+            return ResponseEntity.ok(lugarActualizado);
+        }
+        return ResponseEntity.notFound().build();
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Place> eliminarLugar(@PathVariable Long id){
+        if(servicioPlace.comprobarId(id)){
+            servicioPlace.eliminarLugar(id);
+            return ResponseEntity.status(204).build();
+        }
+        return ResponseEntity.noContent().build();
     }
 }

@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 public class Monumento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique=true)
     private long id;
 
     @Column(nullable = false, length = 2)

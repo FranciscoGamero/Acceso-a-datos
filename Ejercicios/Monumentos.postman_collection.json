@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "491a7a97-9892-41fe-9a67-beac0bc3fefa",
+		"name": "Monumentos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38690008"
+	},
+	"item": [
+		{
+			"name": "MostrarTodos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/monumentos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monumentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MostrarPrimero",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/monumentos/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monumentos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AgregarMonumento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"codPais\": \"FR\",\r\n    \"nombrePais\": \"Francia\",\r\n    \"nombreCiudad\": \"Paris\",\r\n    \"latitud\": \"48.85\",\r\n    \"longitud\": \"2.29\",\r\n    \"nombreMonumento\": \"Torre Eiffiel\",\r\n    \"descripcionMonumento\": \"La torre Eiffel​, inicialmente llamada Tour de 300 mètres es una estructura de hierro pudelado diseñada inicialmente por los ingenieros civiles Maurice Koechlin y Émile Nouguier.\",\r\n    \"imagenMonumento\": \"https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/05/15/5fa3c5d7ef234.jpeg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/monumentos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monumentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SobreescribirMonumento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"id\": 2,\r\n        \"codPais\": \"SE\",\r\n        \"nombrePais\": \"Sevilla\",\r\n        \"nombreCiudad\": \"España\",\r\n        \"latitud\": \"10\",\r\n        \"longitud\": \"-7.04\",\r\n        \"nombreMonumento\": \"Itálica\",\r\n        \"descripcionMonumento\": \"Extensa y antigua ciudad romana bien conservada que cuenta con las ruinas de un templo y un enorme anfiteatro..\",\r\n        \"imagenMonumento\": \"https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/05/15/5fa3c5d7ef234.jpeg\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/monumentos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monumentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EliminarMonumento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"id\": 2,\r\n        \"codPais\": \"SE\",\r\n        \"nombrePais\": \"Sevilla\",\r\n        \"nombreCiudad\": \"España\",\r\n        \"latitud\": \"10\",\r\n        \"longitud\": \"-7.04\",\r\n        \"nombreMonumento\": \"Itálica\",\r\n        \"descripcionMonumento\": \"Extensa y antigua ciudad romana bien conservada que cuenta con las ruinas de un templo y un enorme anfiteatro..\",\r\n        \"imagenMonumento\": \"https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/05/15/5fa3c5d7ef234.jpeg\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/monumentos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"monumentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
