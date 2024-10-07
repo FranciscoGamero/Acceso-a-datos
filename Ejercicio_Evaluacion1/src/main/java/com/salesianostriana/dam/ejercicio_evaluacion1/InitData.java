@@ -19,12 +19,12 @@ public class InitData {
     @Autowired
     private TagRepository tagRespository;
 
+    @PostConstruct
     public void init() {
         tagRespository.save(Tag.builder()
                 .id(1)
                 .nombre("Tapas")
                 .build());
-
         tagRespository.save(Tag.builder()
                 .id(2)
                 .nombre("Vino")
@@ -35,6 +35,10 @@ public class InitData {
                 .build());
         tagRespository.save(Tag.builder()
                 .id(4)
+                .nombre("Deporte")
+                .build());
+        tagRespository.save(Tag.builder()
+                .id(5)
                 .nombre("Deporte")
                 .build());
 
@@ -57,9 +61,14 @@ public class InitData {
                 .imagen("url_imagen_bar_deportivo")
                 .build()));
 
-        lugarRepository.findById(1L).get().addTag(tagRespository.findById(1L).get());
-        lugarRepository.findById(1L).get().addTag(tagRespository.findById(2L).get());
-        lugarRepository.findById(2L).get().addTag(tagRespository.findById(1L).get());
-        lugarRepository.findById(2L).get().addTag(tagRespository.findById(2L).get());
+        Place place1 = lugarRepository.findById(1L).get();
+        place1.addTag(tagRespository.findById(1L).get());
+        place1.addTag(tagRespository.findById(2L).get());
+        lugarRepository.save(place1);
+
+        Place place2 = lugarRepository.findById(2L).get();
+        place2.addTag(tagRespository.findById(3L).get());
+        place2.addTag(tagRespository.findById(4L).get());
+        lugarRepository.save(place2);
     }
 }

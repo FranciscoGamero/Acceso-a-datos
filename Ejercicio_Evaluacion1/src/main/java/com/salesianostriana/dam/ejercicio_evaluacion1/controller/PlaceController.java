@@ -20,6 +20,8 @@ public class PlaceController {
 
     @Autowired
     private PlaceService servicioPlace;
+    @Autowired
+    private TagService servicioTag;
 
     @GetMapping
     public ResponseEntity<List<Place>> mostrarLugares(){
@@ -30,23 +32,33 @@ public class PlaceController {
         return ResponseEntity.ok(encontrados);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public ResponseEntity<Place> mostrarLugar(@PathVariable  Long id){
-        if(servicioPlace.buscarPorId(id).isPresent()){
+        if(servicioPlace.buscarPorId(id).isEmpty()){
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(servicioPlace.buscarPorId(id).get());
     }
-    @PostMapping("/place/")
+    @PostMapping
     public ResponseEntity<Place> crearLugar(@RequestBody Place lugar){
         Place nuevoLugar = servicioPlace.guardarLugar(lugar);
-        return ResponseEntity.ok(lugar);
+        return ResponseEntity.status(201).body(lugar);
     }
     @PutMapping("/{id}")
     public ResponseEntity<Place> modificarLugar(@PathVariable Long id, @RequestBody Place lugar){
         Optional<Place> lugarExistente = servicioPlace.buscarPorId(id);
         if (lugarExistente.isPresent()){
             Place lugarActualizado = servicioPlace.modificarLugar(lugar);
+            return ResponseEntity.ok(lugarActualizado);
+        }
+        return ResponseEntity.notFound().build();
+    }
+    @PutMapping("/place/{id}/tag/add/{nuevo_tag}")
+    public ResponseEntity<Place> agregarTag(@PathVariable Long idLugar, @PathVariable Long idTag, @RequestBody Place lugar){
+        if(servicioPlace.comprobarId(idLugar) && servicioTag.comprobarId(idTag)) {
+
+              lugar.addTag(servicioTag.buscarPorId(idTag).get());
+              Place lugarActualizado = servicioPlace.modificarLugar(lugar);
             return ResponseEntity.ok(lugarActualizado);
         }
         return ResponseEntity.notFound().build();

@@ -27,7 +27,7 @@ public class Place {
     private String longitud;
     private String descripcion;
     @ManyToMany(fetch = FetchType.EAGER)
-    @JsonIgnoreProperties("tag")
+    @JsonIgnoreProperties("listaPlaces")
     @JoinTable(joinColumns = @JoinColumn(name ="place_id"),
     foreignKey = @ForeignKey(name = "fk_place_tag"),
     inverseJoinColumns = @JoinColumn(name = "tag_id"),
@@ -36,14 +36,14 @@ public class Place {
     private String imagen;
 
     public void addTag(Tag tag){
-        if (this.getTags()==null){
+        if (this.tags.isEmpty()){
             this.setTags(new ArrayList<Tag>());
         }
-        this.getTags().add(tag);
-        if (tag.getListaPlaces() == null){
+        this.tags.add(tag);
+        if (tag.getListaPlaces().isEmpty()){
             tag.setListaPlaces(new ArrayList<Place>());
-            tag.getListaPlaces().add(this);
         }
+        tag.getListaPlaces().add(this);
     }
     public void eliminarTag(Tag tag){
         tag.getListaPlaces().remove(this);
