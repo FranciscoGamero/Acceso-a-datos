@@ -48,17 +48,6 @@ public class MonumentoController {
         "nombreMonumento": "Coliseo Romano",
         "descripcionMonumento": "El Coliseo o Anfiteatro Flavio ​ es un anfiteatro de la época del Imperio romano",
         "imagenMonumento": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/05/15/5fa3c5d7ef234.jpeg"
-    },
-    {
-        "id": 2,
-        "codPais": "ES",
-        "nombrePais": "España",
-        "nombreCiudad": "Sevilla",
-        "latitud": "37.44",
-        "longitud": "-6.04",
-        "nombreMonumento": "Itálica",
-        "descripcionMonumento": "Extensa y antigua ciudad romana bien conservada que cuenta con las ruinas de un templo",
-        "imagenMonumento": "https://www.lavanguardia.com/files/og_thumbnail/uploads/2017/05/15/5fa3c5d7ef234.jpeg"
     }
 ]
                                             """
@@ -180,9 +169,7 @@ public class MonumentoController {
             @ApiResponse(responseCode = "200",
                     description = "Monumento eliminado correctamente",
                     content = @Content),
-            @ApiResponse(responseCode = "404",
-                    description = "No se ha encontrado ningún monumento con ese ID",
-                    content = @Content)
+
     })
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarMonumento(@PathVariable Long id) {
