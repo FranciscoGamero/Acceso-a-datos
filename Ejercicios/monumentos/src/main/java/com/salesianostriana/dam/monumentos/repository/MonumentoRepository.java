@@ -5,10 +5,7 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Repository
@@ -69,5 +66,14 @@ public class MonumentoRepository {
     }
     public void delete(Long id) {
         monumentoRepository.remove(id);
+    }
+    public List<Monumento> query(String sortDirection){
+        List<Monumento> data = new ArrayList<>(monumentoRepository.values());
+
+        if(sortDirection.equalsIgnoreCase("asc"))
+            data.sort(Comparator.comparing(Monumento::getNombreMonumento));
+        else if (sortDirection.equalsIgnoreCase("desc"))
+            data.sort(Comparator.comparing(Monumento::getNombreMonumento).reversed());
+        return Collections.unmodifiableList(data);
     }
 }

@@ -12,34 +12,53 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/monumentos",
+					"raw": "{{base_url}}/monumento",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"api",
-						"monumentos"
+						"monumento"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "MostrarPrimero",
+			"name": "MostrarTodosFiltrado",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/api/monumentos/1",
+					"raw": "{{base_url}}/monumento?sort=desc",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"api",
-						"monumentos",
-						"1"
+						"monumento"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/monumento/2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"monumento",
+						"2"
 					]
 				}
 			},
@@ -60,14 +79,12 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/monumentos",
+					"raw": "{{base_url}}/monumento",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"api",
-						"monumentos"
+						"monumento"
 					]
 				}
 			},
@@ -88,14 +105,12 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/monumentos/2",
+					"raw": "{{base_url}}/monumento/2",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"api",
-						"monumentos",
+						"monumento",
 						"2"
 					]
 				}
@@ -117,19 +132,46 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/api/monumentos/2",
+					"raw": "{{base_url}}/monumento/2",
 					"host": [
-						"localhost"
+						"{{base_url}}"
 					],
-					"port": "8080",
 					"path": [
-						"api",
-						"monumentos",
+						"monumento",
 						"2"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "localhost:8080",
+			"type": "string"
 		}
 	]
 }

@@ -1,5 +1,6 @@
 package com.salesianostriana.dam.monumentos.service;
 
+import com.salesianostriana.dam.monumentos.error.MonumentoNotFoundException;
 import com.salesianostriana.dam.monumentos.model.Monumento;
 import com.salesianostriana.dam.monumentos.repository.MonumentoRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,18 +15,34 @@ public class MonumentoService {
 
     private final MonumentoRepository repository;
 
-    public Monumento crearMonumento(Monumento monumento) {
-        return repository.add(monumento);
+    public List<Monumento> listarMonumentos(){
+        List<Monumento> result = repository.getAll();
+        if (result.isEmpty())
+            throw new MonumentoNotFoundException();
+        return result;
     }
-    public List<Monumento> listarMonumentos() {
-        return repository.getAll();
+
+    public List<Monumento> ordenarPorNombre(String sortDirection) {
+        List<Monumento> result = repository.query(sortDirection);
+        if (result.isEmpty())
+            throw new MonumentoNotFoundException();
+        return result;
     }
-    public Optional<Monumento> getMonumentoPorId(Long id) {
-        return repository.get(id);
+
+    public Monumento getMonumentoPorId(Long id) {
+        return repository.get(id)
+                .orElseThrow(() -> new MonumentoNotFoundException(id));
     }
-    public Optional<Monumento> editarMonumento(Long id, Monumento monumentoActualizado) {
-        return repository.edit(id, monumentoActualizado);
+
+    public Monumento crearMonumento(Monumento product) {
+        return repository.add(product);
     }
+
+    public Monumento editarMonumento(Long id, Monumento newValue) {
+        return repository.edit(id, newValue)
+                .orElseThrow(() -> new MonumentoNotFoundException(id));
+    }
+
     public void eliminarMonumento(Long id) {
         repository.delete(id);
     }
