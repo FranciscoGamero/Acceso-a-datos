@@ -1,9 +1,6 @@
 package com.salesianos.data;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
@@ -24,6 +21,13 @@ public class Producto {
     private Long id;
 
     private String nombre;
+
+    @Column(length = 4000)
+    //@Column(name = "description")
+    //@Column(columnDefinition = "text")
+    // Cambia el tipo de la columna a lo que le digamos
+    private String descripcion;
+
     private double precio;
 
     @Override

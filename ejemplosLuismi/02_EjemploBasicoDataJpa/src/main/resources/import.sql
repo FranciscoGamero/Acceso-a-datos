@@ -1,0 +1,1 @@
+insert into productos (id,descripcion,nombre,precio) values (nextval('productos_seq'),"Lorem ipsun dolor sit amet", "Botellin fresquito",1.0);
