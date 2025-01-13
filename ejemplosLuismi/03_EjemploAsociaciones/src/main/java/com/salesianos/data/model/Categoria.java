@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -13,26 +15,16 @@ import java.util.Objects;
 @Builder
 @Entity
 @ToString
-@Table(name = "productos")
-public class Producto {
-
+public class Categoria {
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(length = 512)
-    private String nombre;
+    private String nombreCategoria;
 
-    @Column(columnDefinition = "TEXT")
-    private String descripcion;
-
-    @Column(name = "precio")
-    private double precio;
-
-    @ManyToOne
-    @JoinColumn(name = "categoria_id",
-            foreignKey = @ForeignKey(name = "fk_producto_categoria"))
-    private Categoria categoria;
+    @Builder.Default //Para que la lista no sea null
+    @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER) //Nombre del atributo con @ManyToOne
+    private List<Producto> listaProductos = new ArrayList<>();
 
     @Override
     public final boolean equals(Object o) {
@@ -41,8 +33,8 @@ public class Producto {
         Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
         Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
         if (thisEffectiveClass != oEffectiveClass) return false;
-        Producto producto = (Producto) o;
-        return getId() != null && Objects.equals(getId(), producto.getId());
+        Categoria categoria = (Categoria) o;
+        return getId() != null && Objects.equals(getId(), categoria.getId());
     }
 
     @Override

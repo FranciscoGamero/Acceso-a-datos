@@ -1,6 +1,7 @@
 package com.salesianos.data.controller;
 
 
+import com.salesianos.data.dtos.EditProductoCmd;
 import com.salesianos.data.model.Producto;
 import com.salesianos.data.service.ProductoService;
 import lombok.RequiredArgsConstructor;
@@ -28,14 +29,14 @@ public class ProductoController {
     }
 
     @PostMapping
-    public ResponseEntity<Producto> create(@RequestBody Producto nuevo) {
+    public ResponseEntity<Producto> create(@RequestBody EditProductoCmd nuevo) {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(
                     productoService.save(nuevo));
     }
 
     @PutMapping("/{id}")
-    public Producto edit(@RequestBody Producto aEditar,
+    public Producto edit(@RequestBody EditProductoCmd aEditar,
                          @PathVariable Long id) {
         return productoService.edit(aEditar, id);
     }
