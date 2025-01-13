@@ -26,6 +26,8 @@ public class Categoria {
     @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER) //Nombre del atributo con @ManyToOne
     private List<Producto> listaProductos = new ArrayList<>();
 
+
+
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;

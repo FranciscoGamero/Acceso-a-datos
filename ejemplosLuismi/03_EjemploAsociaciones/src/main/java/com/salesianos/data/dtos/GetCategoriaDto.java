@@ -6,7 +6,7 @@ public record GetCategoriaDto(
         Long id,
         String nombre
 ) {
-    public static GetCategoriaDto of(Categoria c){
-        return new GetCategoriaDto(c.getId(), c.getNombreCategoria());
+    public static GetCategoriaDto of(Categoria categoria) {
+        return new GetCategoriaDto(categoria.getId(), categoria.getNombreCategoria());
     }
 }

@@ -10,7 +10,12 @@ public record GetProductoDto(
         double precio,
         GetCategoriaDto categoria
 ) {
-    public static GetProductoDto of(Producto p, Categoria c){
-        return new GetProductoDto(p.getId(), p.getNombre(), p.getPrecio(), GetCategoriaDto.of(c));
+    public static GetProductoDto of(Producto p) {
+        return new GetProductoDto(
+                p.getId(),
+                p.getNombre(),
+                p.getPrecio(),
+                GetCategoriaDto.of(p.getCategoria())
+        );
     }
 }

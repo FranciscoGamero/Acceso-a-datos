@@ -14,9 +14,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DataSeed {
 
-    private final ProductoRepository repo;
+    private final ProductoRepository productoRepository;
     private final CategoriaRepository categoriaRepository;
-
 
     @PostConstruct
     public void run() {
@@ -30,7 +29,8 @@ public class DataSeed {
                 .categoria(c)
                 .build();
 
-        repo.save(p);
+
+        productoRepository.save(p);
 
         Producto p2 = Producto.builder()
                 .nombre("Otro producto")
@@ -39,7 +39,7 @@ public class DataSeed {
                 .categoria(c)
                 .build();
 
-        repo.saveAll(List.of(p, p2));
+        productoRepository.saveAll(List.of(p, p2));
 
 
     }

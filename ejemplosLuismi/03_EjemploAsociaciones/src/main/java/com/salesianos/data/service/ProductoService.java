@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -35,13 +36,14 @@ public class ProductoService {
     }
 
     public Producto save(EditProductoCmd nuevo) {
-
-        return productoRepository.save(Producto.builder()
+        Producto productoCreado = Producto.builder()
                 .nombre(nuevo.nombre())
                 .precio(nuevo.precio())
                 .descripcion(nuevo.descripcion())
-                .categoria(categoriaRepository.findById(nuevo.categoriaId()).orElse(null))
-                .build());
+                .build();
+        productoCreado.addCategoria(categoriaRepository
+                .findById(nuevo.categoriaId()).orElse(null));
+        return productoRepository.save(productoCreado);
     }
 
     public Producto edit(EditProductoCmd producto, Long id) {
@@ -50,7 +52,8 @@ public class ProductoService {
                     old.setNombre(producto.nombre());
                     old.setDescripcion(producto.descripcion());
                     old.setPrecio(producto.precio());
-                    old.setCategoria(categoriaRepository.findById(producto.categoriaId()).orElse(null));
+                    old.eliminarCategoria(categoriaRepository.findById(producto.categoriaId()).orElse(null));
+                    old.addCategoria(categoriaRepository.findById(producto.categoriaId()).orElse(null));
                     return productoRepository.save(old);
                 })
                 .orElseThrow(() -> new EntityNotFoundException("No hay producto con ID: "+ id));
@@ -58,7 +61,11 @@ public class ProductoService {
     }
 
     public void delete(Long id) {
-        productoRepository.deleteById(id);
+       Optional<Producto> p = productoRepository.findById(id);
+       if(p.isPresent()) {
+           p.get().eliminarCategoria(p.get().getCategoria());
+           productoRepository.deleteById(p.get().getId());
+       }
     }
 
 
