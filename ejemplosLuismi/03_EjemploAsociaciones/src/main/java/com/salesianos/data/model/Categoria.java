@@ -1,5 +1,6 @@
 package com.salesianos.data.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
@@ -24,8 +25,19 @@ public class Categoria {
 
     @Builder.Default //Para que la lista no sea null
     @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER) //Nombre del atributo con @ManyToOne
+    @ToString.Exclude
+    @JsonManagedReference //Hace que a partir de aqui no vuelva el bucle al mostrar los productos
     private List<Producto> listaProductos = new ArrayList<>();
 
+
+    public void addProducto (Producto p){
+        p.setCategoria(this);
+        this.listaProductos.add(p);
+    }
+    public void removeProducto (Producto p){
+        p.setCategoria(null);
+        this.listaProductos.remove(p);
+    }
 
 
     @Override
