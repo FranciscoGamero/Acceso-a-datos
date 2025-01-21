@@ -3,6 +3,7 @@ package com.salesianostriana.ejercicio3.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.*;
 import org.hibernate.proxy.HibernateProxy;
 
@@ -27,6 +28,8 @@ public class Usuario {
     private String pin;
     private double saldo;
 
+    @OneToMany
+    @Builder.Default
     private List<Uso> listaUsos = new ArrayList<>();
 
     @Override

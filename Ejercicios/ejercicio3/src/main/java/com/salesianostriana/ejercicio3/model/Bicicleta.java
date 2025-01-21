@@ -29,11 +29,10 @@ public class Bicicleta {
   fetch = FetchType.EAGER,
   cascade = CascadeType.ALL,
   orphanRemoval = true)
-  @ToString.Exclude
+  @Builder.Default
   private List<Uso> listaUsos= new ArrayList<>();
 
-  @ManyToMany
-  @ToString.Exclude
+  @ManyToOne
   private Estacion estacion;
 
   public void addUso(Uso u){
