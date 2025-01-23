@@ -38,6 +38,42 @@ public class MainDeMentira {
                 .estado(true)
                 .build();
 
+        Bicicleta bicicleta3 = Bicicleta.builder()
+                .marca("Giant")
+                .modelo("Escape 3")
+                .estado(true)
+                .build();
+
+        Bicicleta bicicleta4 = Bicicleta.builder()
+                .marca("Trek")
+                .modelo("FX 2")
+                .estado(true)
+                .build();
+
+        Bicicleta bicicleta5 = Bicicleta.builder()
+                .marca("Giant")
+                .modelo("Escape 3")
+                .estado(true)
+                .build();
+
+        Bicicleta bicicleta6 = Bicicleta.builder()
+                .marca("Trek")
+                .modelo("FX 2")
+                .estado(true)
+                .build();
+
+        Bicicleta bicicleta7 = Bicicleta.builder()
+                .marca("Giant")
+                .modelo("Escape 3")
+                .estado(true)
+                .build();
+
+        Bicicleta bicicleta8 = Bicicleta.builder()
+                .marca("Trek")
+                .modelo("FX 2")
+                .estado(true)
+                .build();
+/*
         Estacion estacion1 = Estacion.builder()
                 .numero(101L)
                 .nombre("Estación Central")
@@ -90,6 +126,11 @@ public class MainDeMentira {
         estacion2.addUso(uso2);
 
         estacionRepository.saveAll(List.of(estacion1, estacion2));
+        */
+        bicicletaRepository.saveAll(List.of(bicicleta1,bicicleta2,bicicleta3,
+                bicicleta4,bicicleta5,bicicleta6,bicicleta7,bicicleta8));
+
+        bicicletaRepository.findByMarca("Giant").forEach(System.out::println);
     }
 
 }
