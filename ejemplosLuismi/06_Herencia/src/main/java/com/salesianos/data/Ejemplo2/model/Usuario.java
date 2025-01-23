@@ -1,4 +1,4 @@
-package com.salesianos.data.model;
+package com.salesianos.data.Ejemplo2.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,6 +11,7 @@ import lombok.experimental.SuperBuilder;
 @Entity
 @ToString(callSuper = true)
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@SuperBuilder
 public class Usuario {
     @Id
     @GeneratedValue

@@ -1,10 +1,11 @@
-package com.salesianos.data.model;
+package com.salesianos.data.Ejemplo2.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -13,7 +14,8 @@ import java.time.LocalDate;
 @Entity
 @ToString(callSuper = true)
 @DiscriminatorValue("A")
+@SuperBuilder
 public class Admin extends Usuario{
 
-    private LocalDate fechaCreaciom;
+    private LocalDateTime ultimoCambio;
 }
