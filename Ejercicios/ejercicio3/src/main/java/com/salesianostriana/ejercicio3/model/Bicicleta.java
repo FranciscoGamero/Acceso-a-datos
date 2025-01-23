@@ -32,7 +32,7 @@ public class Bicicleta {
   @Builder.Default
   private List<Uso> listaUsos= new ArrayList<>();
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
   private Estacion estacion;
 
   public void addUso(Uso u){

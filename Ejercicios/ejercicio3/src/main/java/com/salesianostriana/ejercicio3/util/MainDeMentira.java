@@ -38,9 +38,6 @@ public class MainDeMentira {
                 .estado(true)
                 .build();
 
-        bicicletaRepository.saveAll(List.of(bicicleta1, bicicleta2));
-
-
         Estacion estacion1 = Estacion.builder()
                 .numero(101L)
                 .nombre("Estación Central")
@@ -55,11 +52,18 @@ public class MainDeMentira {
                 .capacidad(30L)
                 .build();
 
+        Estacion estacion3 = Estacion.builder()
+                .numero(103L)
+                .nombre("Estación Sur")
+                .coordenadas("37.3891° N, 5.9845° W")
+                .capacidad(30L)
+                .build();
 
         estacion1.addBicicleta(bicicleta1);
         estacion2.addBicicleta(bicicleta2);
 
-        estacionRepository.saveAll(List.of(estacion1, estacion2));
+        estacionRepository.saveAll(List.of(estacion1, estacion2, estacion3));
+        bicicletaRepository.saveAll(List.of(bicicleta1, bicicleta2));
 
         Uso uso1 = Uso.builder()
                 .fechaInicio(LocalDateTime.of(2025, 1, 20, 10, 0))
@@ -76,6 +80,7 @@ public class MainDeMentira {
                 .bicicleta(bicicleta2)
                 .estacion(estacion2)
                 .build();
+
         usoRepository.saveAll(List.of(uso1, uso2));
 
         bicicleta1.addUso(uso1);
@@ -85,31 +90,6 @@ public class MainDeMentira {
         estacion2.addUso(uso2);
 
         estacionRepository.saveAll(List.of(estacion1, estacion2));
-
-        Usuario usuario = Usuario.builder()
-                .nombre("Juan Pérez")
-                .numTarjeta("1234-5678-9012-3456")
-                .pin("1234")
-                .saldo(50.00)
-                .build();
-
-
-        usuario.addUso(uso1);
-        usuario.addUso(uso2);
-        usuarioRepository.save(usuario);
-
-
-        bicicleta1.removeUso(uso1);
-        bicicleta2.removeUso(uso2);
-
-        estacion1.removeBicicleta(bicicleta1);
-        estacion2.removeBicicleta(bicicleta2);
-
-        bicicletaRepository.saveAll(List.of(bicicleta1, bicicleta2));
-        estacionRepository.saveAll(List.of(estacion1, estacion2));
-        usoRepository.saveAll(List.of(uso1, uso2));
-
-        bicicletaRepository.deleteAll();
-
     }
+
 }

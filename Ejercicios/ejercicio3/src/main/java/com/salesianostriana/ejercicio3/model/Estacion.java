@@ -32,7 +32,10 @@ public class Estacion {
     @ToString.Exclude
     private List<Uso> listaUsos= new ArrayList<>();
 
-    @OneToMany
+    @OneToMany(mappedBy = "estacion",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     @Builder.Default
     @ToString.Exclude
     private List<Bicicleta> listaBicicletas = new ArrayList<>();
