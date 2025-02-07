@@ -131,6 +131,7 @@ public class MainDeMentira {
                 bicicleta4,bicicleta5,bicicleta6,bicicleta7,bicicleta8));
 
         bicicletaRepository.findByMarca("Giant").forEach(System.out::println);
+        bicicletaRepository.countAll();
     }
 
 }

@@ -9,4 +9,6 @@ public interface BicicletaRepository extends JpaRepository<Bicicleta, Long> {
 
 
     List<Bicicleta> findByMarca(String marca);
+
+    long countAll();
 }
