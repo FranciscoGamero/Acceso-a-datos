@@ -20,6 +20,7 @@ import java.util.stream.Collectors;
 @Builder
 @Entity
 @Table(name="user_entity")
+
 public class User implements UserDetails {
 
     @Id
@@ -29,6 +30,9 @@ public class User implements UserDetails {
     @NaturalId
     @Column(unique = true, updatable = false)
     private String username;
+
+    @Column(unique = true)
+    private String correo;
 
     private String password;
 

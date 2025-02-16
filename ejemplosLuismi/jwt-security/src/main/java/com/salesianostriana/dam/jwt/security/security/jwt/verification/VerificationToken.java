@@ -17,7 +17,7 @@ import java.util.UUID;
 public class VerificationToken {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     //@MapsId

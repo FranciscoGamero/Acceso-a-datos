@@ -13,16 +13,20 @@ public record UserResponse(
         @JsonInclude(JsonInclude.Include.NON_NULL)
         String token,
         @JsonInclude(JsonInclude.Include.NON_NULL)
-        String refreshToken
-
+        String refreshToken,
+        @JsonInclude
+        String verificationToken
 ) {
 
     public static UserResponse of (User user) {
-        return new UserResponse(user.getId(), user.getUsername(), null, null);
+        return new UserResponse(user.getId(), user.getUsername(), null, null, null);
     }
 
     public static UserResponse of (User user, String token, String refreshToken) {
-        return new UserResponse(user.getId(), user.getUsername(), token, refreshToken);
+        return new UserResponse(user.getId(), user.getUsername(), token, refreshToken, null);
+    }
+    public static UserResponse of (User user, String token, String refreshToken, String verificationToken) {
+        return new UserResponse(user.getId(), user.getUsername(), token, refreshToken, verificationToken);
     }
 
 }

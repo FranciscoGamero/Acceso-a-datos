@@ -22,13 +22,10 @@ public class UserService {
         User user = User.builder()
                 .username(createUserRequest.username())
                 .password(passwordEncoder.encode(createUserRequest.password()))
+                .correo(createUserRequest.correo())
                 .roles(Set.of(UserRole.USER))
                 .build();
 
         return userRepository.save(user);
-    }
-        public User verifyUser(User user, String code){
-
-
     }
 }

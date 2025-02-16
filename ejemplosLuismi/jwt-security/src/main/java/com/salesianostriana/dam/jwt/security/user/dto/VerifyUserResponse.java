@@ -14,7 +14,6 @@ public record VerifyUserResponse(
         String refreshToken,
         @JsonInclude(JsonInclude.Include.NON_NULL)
         String verifyToken
-
 ) {
 
     public static VerifyUserResponse of (User user) {

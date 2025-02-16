@@ -5,6 +5,7 @@ import com.salesianostriana.dam.jwt.security.security.jwt.refresh.RefreshToken;
 import com.salesianostriana.dam.jwt.security.security.jwt.refresh.RefreshTokenRequest;
 import com.salesianostriana.dam.jwt.security.security.jwt.refresh.RefreshTokenService;
 import com.salesianostriana.dam.jwt.security.security.jwt.verification.VerificationToken;
+import com.salesianostriana.dam.jwt.security.security.jwt.verification.VerificationTokenRequest;
 import com.salesianostriana.dam.jwt.security.security.jwt.verification.VerificationTokenService;
 import com.salesianostriana.dam.jwt.security.user.dto.CreateUserRequest;
 import com.salesianostriana.dam.jwt.security.user.dto.LoginRequest;
@@ -36,15 +37,17 @@ public class UserController {
     @PostMapping("/auth/register")
     public ResponseEntity<UserResponse> register(@RequestBody CreateUserRequest createUserRequest) {
         User user = userService.createUser(createUserRequest);
-        verificationTokenService.create(user);
+        VerificationToken verificationToken = verificationTokenService.create(user);
+        System.out.println(verificationToken.getId());
 
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(UserResponse.of(user));
     }
 
     @PostMapping("/auth/verify")
-    public ResponseEntity<VerifyUserResponse> verify(@RequestBody String token){
-        return ResponseEntity.status(HttpStatus.CREATED).body(VerifyUserResponse.of(verificationTokenService.verifyUser(token)));
+    public ResponseEntity<?> verify(@RequestBody VerificationTokenRequest verificationTokenRequest) {
+        User user = verificationTokenService.verifyUser(verificationTokenRequest.token());
+        return ResponseEntity.ok(user);
     }
     @PostMapping("/auth/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
