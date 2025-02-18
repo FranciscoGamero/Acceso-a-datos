@@ -1,0 +1,1424 @@
+{
+	"info": {
+		"_postman_id": "7caac72c-2383-44f1-b767-89d7946fd4e4",
+		"name": "Proyecto Conecta",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38690008",
+		"_collection_link": "https://proyecto-conecta.postman.co/workspace/Proyecto-Conecta-Workspace~baf1a380-991a-4616-9f93-d26b41786c1b/collection/38690008-7caac72c-2383-44f1-b767-89d7946fd4e4?action=share&source=collection_link&creator=38690008"
+	},
+	"item": [
+		{
+			"name": "Profesor",
+			"item": [
+				{
+					"name": "CrearProfesor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/profesor",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerProfesor",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/profesor/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"profesor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerProfesores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/profesor",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"profesor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarProfesor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Juan\",\r\n    \"apellidos\": \"Pérez\",\r\n    \"email\": \"juan.perez@gmailcambiado.com\",\r\n    \"telefono\": \"123456789\",\r\n    \"puesto\": \"Desarrollador\",\r\n    \"area\": \"IT\",\r\n    \"empresa\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/profesor/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"profesor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarProfesor",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/profesor/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"profesor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Trabajador",
+			"item": [
+				{
+					"name": "CrearTrabajador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/trabajador",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"trabajador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerTrabajador",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/trabajador/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"trabajador",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerTrabajadores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/trabajador",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"trabajador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarTrabajador",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nombre\": \"Juan\",\r\n    \"apellidos\": \"Pérez\",\r\n    \"email\": \"juan.perez@gmailcambiado.com\",\r\n    \"telefono\": \"123456789\",\r\n    \"puesto\": \"Desarrollador\",\r\n    \"area\": \"IT\",\r\n    \"empresa\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/trabajador/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"trabajador",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarTrabajador",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nuria\",\r\n  \"apellidos\": \"Palomares\",\r\n  \"email\": \"nuria.palomares@ejemplo.com\",\r\n  \"telefono\": \"123456789\",\r\n  \"puesto\": \"Desarrollador\",\r\n  \"area\": \"IT\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/trabajador/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"trabajador",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "CrearUsuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/usuario",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerUsuario",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/usuario/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/usuario",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarUsuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"username\": \"paco\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/usuario/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarUsuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/usuario/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contacto",
+			"item": [
+				{
+					"name": "CrearContacto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"contactoPK\": {\r\n    \"trabajador_id\": 1,\r\n    \"profesor_id\": 1\r\n  },\r\n  \"fecha\": \"2025-01-29T10:00:00\",\r\n  \"canal\": \"Correo electrónico\",\r\n  \"resumen\": \"Reunión inicial para definir los objetivos del curso y establecer los primeros pasos de colaboración.\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/contacto",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"contacto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerContactoPorNombreEmpresa",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/contacto/empresa/EmpresaTech",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"contacto",
+								"empresa",
+								"EmpresaTech"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerContactoPorId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/contacto/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"contacto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerContactoPorIdAutogenerado",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/contacto/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"contacto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarContacto",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"contactoPK\": {\r\n    \"trabajador_id\": 1,\r\n    \"profesor_id\": 1\r\n  },\r\n  \"fecha\": \"2025-01-29T10:00:00\",\r\n  \"canal\": \"Llamada de telefono\",\r\n  \"resumen\": \"Reunión inicial para definir los objetivos del curso y establecer los primeros pasos de colaboración.\",\r\n  \"profesor\": {\r\n    \"id\": 1,\r\n    \"nombre\": \"Juan\",\r\n    \"apellidos\": \"Pérez\",\r\n    \"email\": \"juan.perez@ejemplo.com\",\r\n    \"telefono\": \"123456789\",\r\n    \"usuario\": {\r\n      \"id\": 1,\r\n      \"username\": \"juanp\",\r\n      \"password\": \"password1\",\r\n      \"role\": \"ROLE_PROFESOR\"\r\n    },\r\n    \"borrado\": true\r\n  },\r\n  \"trabajador\": {\r\n    \"id\": 1,\r\n    \"nombre\": \"Juan\",\r\n    \"apellidos\": \"Pérez\",\r\n    \"email\": \"juan.perez@techcorp.com\",\r\n    \"telefono\": \"123456789\",\r\n    \"puesto\": \"Desarrollador\",\r\n    \"area\": \"IT\",\r\n    \"borrado\": false\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/contacto/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"contacto",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Empresa",
+			"item": [
+				{
+					"name": "CrearEmpresa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cif\": \"B12345678\",\r\n  \"direccion\": \"Calle Ejemplo 123, Sevilla\",\r\n  \"coordenadas\": \"37.3891,-5.9845\",\r\n  \"nombre\": \"Empresa Ejemplo S.L.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/empresa",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerEmpresas",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/empresa",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"empresa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerUnaEmpresa",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/empresa/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"empresa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarEmpresa",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cif\": \"A12345678\",\r\n    \"direccion\": \"Calle Falsa 362575\",\r\n    \"coordenadas\": \"37.3826,-5.9963\",\r\n    \"nombre\": \"Empresa Tech\",\r\n    \"listaProfesional\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/empresa/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"empresa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarEmpresa",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/empresa/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"empresa",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Curso",
+			"item": [
+				{
+					"name": "CrearCurso",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Java Avanzado\",\r\n    \"horasEmpresa\": 40\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/curso",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerCurso",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/curso/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"curso",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerCursos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/curso",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"curso"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarCurso",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Java Avanzado\",\r\n  \"horasEmpresa\": 80\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/curso/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"curso",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarCurso",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/curso/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"curso",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Titulo",
+			"item": [
+				{
+					"name": "CrearTitulo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Ingeniería en Telecomunicaciones\",\r\n    \"duracion\": 5,\r\n    \"grado\": \"Licenciatura\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/titulo",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"titulo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerTitulo",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/titulo/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"titulo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerTitulos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/titulo",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"titulo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarTitulo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"nombre\": \"Ingeniería en Microinformatica\",\r\n     \"duracion\": 5,\r\n     \"grado\": \"Licenciatura\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/titulo/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"titulo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BorrarTitulo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/titulo/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"titulo",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Demanda",
+			"item": [
+				{
+					"name": "CrearDemanda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cantidadAlumnos\": 25,\r\n  \"requisitos\": \"Conocimiento en Java y Spring Boot\",\r\n  \"convocatoria\": {\r\n    \"id\": 1\r\n  },\r\n  \"curso\": {\r\n    \"id\": 1\r\n  },\r\n  \"empresa\": {\r\n    \"id\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/demanda",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"demanda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarDemanda",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cantidadAlumnos\": 8,\r\n  \"requisitos\": \"Conocimiento en Spring, Angular y Flutter\",\r\n  \"convocatoria\": {\r\n    \"id\": 1\r\n  },\r\n  \"curso\": {\r\n    \"id\": 1\r\n  },\r\n  \"empresa\": {\r\n    \"id\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/demanda/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"demanda",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarDemanda Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cantidadAlumnos\": 8,\r\n  \"requisitos\": \"Conocimiento en Spring, Angular y Flutter\",\r\n  \"convocatoria\": {\r\n    \"id\": 1\r\n  },\r\n  \"curso\": {\r\n    \"id\": 1\r\n  },\r\n  \"empresa\": {\r\n    \"id\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/demanda",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"demanda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerDemandas",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/demanda",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"demanda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerUnaDemanda",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/demanda/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"demanda",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarDemanda",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/demanda/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"demanda",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FamiliaProfesional",
+			"item": [
+				{
+					"name": "CrearFamiliaProfesional",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Administracion y finanzas\",\r\n    \"listaTitulos\": [],\r\n    \"listaEmpresas\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/familiaProfesional",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"familiaProfesional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarFamiliaProfesional",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cantidadAlumnos\": 8,\r\n  \"requisitos\": \"Conocimiento en Spring, Angular y Flutter\",\r\n  \"convocatoria\": {\r\n    \"id\": 1\r\n  },\r\n  \"curso\": {\r\n    \"id\": 1\r\n  },\r\n  \"empresa\": {\r\n    \"id\": 1\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/familiaProfesional/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"familiaProfesional",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerFamiliaProfesionales",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/familiaProfesional",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"familiaProfesional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VerFamiliaProfesional",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/familiaProfesional/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"familiaProfesional",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarFamiliaProfesional",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/familiaProfesional/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"familiaProfesional",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Convocatoria",
+			"item": [
+				{
+					"name": "CrearConvocatoria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cursoEscolar\": \"2024-2025\",\r\n  \"nombre\": \"Convocatoria Ordinaria\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/convocatoria",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"convocatoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerConvocatorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/convocatoria",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"convocatoria"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerUnaConvocatoria",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/convocatoria/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"convocatoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditarUnaConvocatoria",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"cursoEscolar\": \"2024-2025\",\r\n  \"nombre\": \"Convocatoria Extraordinaria (Septiembre)\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL_BASE}}/convocatoria/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"convocatoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EliminarUnaConvocatoria",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL_BASE}}/convocatoria/1",
+							"host": [
+								"{{URL_BASE}}"
+							],
+							"path": [
+								"convocatoria",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL_BASE",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}

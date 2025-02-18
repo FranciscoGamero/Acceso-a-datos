@@ -39,6 +39,11 @@ public class User implements UserDetails {
     @ElementCollection(fetch = FetchType.EAGER)
     private Set<UserRole> roles;
 
+    /*
+    * private String verificationCode;
+    */
+
+
     private boolean enabled = false;
 
     @Override

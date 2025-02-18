@@ -97,6 +97,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authz -> authz
                 .requestMatchers(HttpMethod.POST, "/auth/register", "/auth/verify",  "/auth/login", "/auth/refresh/token").permitAll()
                 .requestMatchers("/me/admin").hasRole("ADMIN")
+                .requestMatchers("/me/**").authenticated()
                 .requestMatchers("/h2-console/**").permitAll()
                 .anyRequest().authenticated());
 

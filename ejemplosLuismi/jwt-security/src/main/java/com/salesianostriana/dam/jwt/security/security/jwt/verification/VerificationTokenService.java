@@ -41,13 +41,14 @@ public class VerificationTokenService {
     public VerificationToken create(User user) {
         verificationTokenRepository.deleteByUser(user);
 
-        // Crear el token de verificación
+
         VerificationToken verificationToken = verificationTokenRepository.save(
                 VerificationToken.builder()
                         .user(user)
                         .expireAt(Instant.now().plusSeconds(durationInMinutes * 600)) // Esto está bien calculado como segundos
                         .build());
-
+        System.out.println(verificationToken.getToken());
+        /*
         Email email = EmailBuilder.startingBlank()
                 .from("sevillista916@gmial.com")
                 .to(user.getCorreo())
@@ -60,7 +61,7 @@ public class VerificationTokenService {
                 .buildMailer();
 
         mailer.sendMail(email);
-
+        */
         return verificationToken;
     }
 

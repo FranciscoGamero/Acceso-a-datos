@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
 import java.util.Set;
 
 @Service
@@ -24,8 +25,12 @@ public class UserService {
                 .password(passwordEncoder.encode(createUserRequest.password()))
                 .correo(createUserRequest.correo())
                 .roles(Set.of(UserRole.USER))
+                //.verificationCode(generateCode())
                 .build();
 
         return userRepository.save(user);
+    }
+    public String generateCode(){
+        return String.format("%06d", new Random().nextInt(99999));
     }
 }

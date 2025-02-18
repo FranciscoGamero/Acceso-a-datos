@@ -40,6 +40,11 @@ public class UserController {
         VerificationToken verificationToken = verificationTokenService.create(user);
         System.out.println(verificationToken.getId());
 
+        /*
+        * Para hacerlo sin usar el token se quitaria el
+        * VerificationToken verificationToken = verificationTokenService.create(user);
+        * Ya que se genera solo al crear el usuario
+        */
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(UserResponse.of(user));
     }
